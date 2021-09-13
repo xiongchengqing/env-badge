@@ -1,0 +1,21 @@
+{
+  "name": "env-badge",
+  "version": "1.0.0",
+  "description": "Badge favicon with dev, test, beta text to easily identify where the evniroments you are",
+  "main": "cli.js",
+  "keywords": [
+    "favicon",
+    "env",
+    "badge"
+  ],
+  "author": "Xiong,Cheng-Qing",
+  "license": "MIT",
+  "dependencies": {
+    "@fiahfy/ico-convert": "^0.0.12",
+    "cross-env": "^7.0.3",
+    "jimp": "^0.16.1"
+  },
+  "bin": {
+    "gen-badge": "./cli.js"
+  }
+}
