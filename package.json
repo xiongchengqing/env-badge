@@ -1,6 +1,6 @@
 {
   "name": "env-badge",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Badge favicon with dev, test, beta text to easily identify where the evniroments you are",
   "main": "cli.js",
   "keywords": [
