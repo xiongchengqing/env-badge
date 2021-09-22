@@ -5,21 +5,27 @@ const jimp = require('jimp')
 const convert = require('@fiahfy/ico-convert').convert
 
 const STD_L = 521
-const envs = {
-    'DEV': `${__dirname}/assets/dev.png`,
-    'TEST': `${__dirname}/assets/test.png`,
-    'BETA': `${__dirname}/assets/beta.png`,
-}
+const envMap = [
+    ['dev', `${__dirname}/assets/dev.png`],
+    ['test', `${__dirname}/assets/test.png`],
+    ['beta', `${__dirname}/assets/beta.png`],
+    ['prod', `${__dirname}/assets/prod.png`],
+    ['DEV', `${__dirname}/assets/dev.png`],
+    ['TEST', `${__dirname}/assets/test.png`],
+    ['BETA', `${__dirname}/assets/beta.png`],
+    ['PROD', `${__dirname}/assets/prod.png`],
+    [undefined, `${__dirname}/assets/undefined.png`],
+]
 
 const sourceImagePath = `${process.cwd()}/src/assets/images/favicon.png`
 const faviconPath = `${process.cwd()}/public/favicon.ico`
-const env = process.env.NODE_ENV || 'prod'
+const env = process.env.NODE_ENV
 
 async function main() {
     try {
-        if (!envs[env.toUpperCase()]) return
+        if (!envMap.has(env)) return
 
-        const badgeImagePath = envs[env.toUpperCase()]
+        const badgeImagePath = envMap.get(env)
         const [source, badge] = await Promise.all([
             jimp.read(sourceImagePath),
             jimp.read(badgeImagePath),
