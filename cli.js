@@ -5,7 +5,7 @@ const jimp = require('jimp')
 const convert = require('@fiahfy/ico-convert').convert
 
 const STD_L = 521
-const envMap = [
+const envMap = new Map([
     ['dev', `${__dirname}/assets/dev.png`],
     ['test', `${__dirname}/assets/test.png`],
     ['beta', `${__dirname}/assets/beta.png`],
@@ -15,7 +15,7 @@ const envMap = [
     ['BETA', `${__dirname}/assets/beta.png`],
     ['PROD', `${__dirname}/assets/prod.png`],
     [undefined, `${__dirname}/assets/undefined.png`],
-]
+])
 
 const sourceImagePath = `${process.cwd()}/src/assets/images/favicon.png`
 const faviconPath = `${process.cwd()}/public/favicon.ico`
